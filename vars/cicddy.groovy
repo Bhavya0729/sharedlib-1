@@ -19,3 +19,9 @@ sh """
     java -cp /var/lib/jenkins/workspace/${jobname} Helloworld > /var/lib/jenkins/workspace/${jobname}/test_output.txt
 """
 }
+def release(jobname,ip)
+{
+ sh """
+scp /var/lib/jenkins/workspace/${jobname}/Helloworld.java ubuntu@${ip}:/home/ubuntu/ten
+"""
+}
